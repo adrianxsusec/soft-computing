@@ -1,0 +1,4 @@
+/Users/adrian/Library/Java/JavaVirtualMachines/corretto-17.0.4.1/Contents/Home/bin/java -jar /Users/adrian/Documents/FER/YEAR_4/SEM_1/MEKRAC/LAB/LAB_03/maven_fuzzy_controller/fuzzy_controller/target/fuzzy_controller-1.0-SNAPSHOT.jar
+1
+20
+10
