@@ -49,30 +49,22 @@ def import_gestures(gesture_name):
 
 
 def preprocess_gesture(gesture, M) -> np.ndarray:
-    # Convert the array of tuples to a NumPy array
     gesture = np.array(gesture)
 
-    # Calculate Tc (centroid)
     Tc = np.mean(gesture, axis=0)
 
-    # Subtract Tc from each point in the gesture
     centered_gesture = gesture - Tc
 
-    # Calculate mx, my, and m
     mx = np.max(np.abs(centered_gesture[:, 0]))
     my = np.max(np.abs(centered_gesture[:, 1]))
     m = max(mx, my)
 
-    # Scale all points by dividing by m
     scaled_gesture = centered_gesture / m
 
-    # Calculate gesture length D
     D = np.sum(np.linalg.norm(np.diff(scaled_gesture, axis=0), axis=1))
 
-    # Calculate representative points
     intervals = np.linspace(0, D, M + 1)
 
-    # Find the closest point to each interval
     representative_points = []
     for interval in intervals:
         if len(representative_points) == M:
